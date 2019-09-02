@@ -31,7 +31,22 @@ class Fen_lei  extends Component{
 
         }
     }
+ submit=()=>{
+     if(this.state.name==undefined){
+         return Alert.alert('ヒント','名前を入力してください',[{'text':'分かりました'}])
+     }
+     if(this.state.phone==undefined){
+        return Alert.alert('ヒント','電話番号を入力してください。',[{'text':'分かりました'}])
+    }
+    if(this.state.money==undefined){
+        return Alert.alert('ヒント','予算の金額は空です。',[{'text':'分かりました'}])
+    }
+    if(this.state.xx==undefined){
+        return Alert.alert('ヒント','修理の詳細は空です。',[{'text':'分かりました'}])
+    }
+        
 
+ }
     render(){
         const info=this.props.navigation.getParam('info')
         return(
@@ -43,33 +58,44 @@ class Fen_lei  extends Component{
             defaultValue={info}
            />
            <Input label='名前' containerStyle={{marginTop:20,width:dian.w*.95}} 
-            onChangeText={()=>{
-
+            onChangeText={(name)=>{
+            this.setState({name})
             }}
            />
            <Input label='連絡電話' containerStyle={{marginTop:20,width:dian.w*.95}} 
-            
+             onChangeText={(phone)=>{
+             this.setState({phone})
+             }}
             />
              <Input label='予算賃金' containerStyle={{marginTop:20,width:dian.w*.95}} 
-            
+             placeholder='オフラインのみのお支払いに対応しています。'
+             multiline={true}
+             onChangeText={(money)=>{
+              this.setState({money})   
+             }}
             />
-             <Input label='予算賃金' containerStyle={{marginTop:20,width:dian.w*.95}} 
-            
-            />
+             
              <Input label='修理の詳細' containerStyle={{marginTop:20,width:dian.w*.95}} 
              placeholder='修理が必要な物品の詳細について、詳しく説明してください。'
              multiline={true}
             inputContainerStyle={{marginTop:10}}
+            onChangeText={(xx)=>{
+            this.setState({xx})
+            }}
             
             />
              <Input label='コメント' containerStyle={{marginTop:20,width:dian.w*.95}} 
              placeholder='他に必要なものがありましたら、ここに備考してください。'
              multiline={true}
             inputContainerStyle={{marginTop:10}}
-            
+            onChangeText={(note)=>{
+            this.setState({note})
+            }}
             />
             <Button title='送信' buttonStyle={{
                 marginTop:20,width:dian.w*.9,backgroundColor:dian.theme
+            }} onPress={()=>{
+               this.submit()
             }}/>
          </ScrollView> 
         

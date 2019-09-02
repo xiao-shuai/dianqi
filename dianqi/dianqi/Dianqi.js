@@ -39,7 +39,7 @@ class Dianqi  extends Component{
         source={require('../imgges/bg1.jpg')}
         style={{flexDirection:'row',justifyContent:'space-between',padding:20,alignItems:'center'}}>
             <TouchableOpacity onPress={()=>{
-                // this.props.navigation.navigate('Xiaoxi')
+                this.props.navigation.navigate('My')
             }}>
             <EvilIcons name='navicon' style={{fontSize:30,color:'white'}}  />
             </TouchableOpacity>
@@ -113,7 +113,7 @@ class Dianqi  extends Component{
             </ImageBackground> 
              </TouchableOpacity>
              <TouchableOpacity onPress={()=>{
-                 this.props.navigation.navigate('Jia_dian')
+                 this.props.navigation.navigate('Jia_dian',{info:'家電クリーニング'})
              }}>
              <ImageBackground source={require('../imgges/bg1.jpg')} 
               style={{width:'100%',height:dian.h*.18,alignItems:'center',justifyContent:'center'}}
@@ -125,7 +125,9 @@ class Dianqi  extends Component{
             </ImageBackground> 
              </TouchableOpacity>
             </View>
-            <TouchableOpacity style={{width:'47%',height:dian.h*.4}}>
+            <TouchableOpacity style={{width:'47%',height:dian.h*.4}} onPress={()=>{
+                this.props.navigation.navigate('Jia_dian',{info:'直接予約'})
+            }}>
             <ImageBackground source={require('../imgges/bg1.jpg')} 
              style={{width:'100%',height:dian.h*.4,alignItems:'center',justifyContent:'center'}}
             >
