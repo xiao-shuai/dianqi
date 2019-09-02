@@ -20,6 +20,7 @@ class Dianqi  extends Component{
     static navigationOptions = {
         // title: 'log in',
         header:null,
+        headerBackTitle:null,
         headerStyle: {
             backgroundColor: '#12FFF7',
           },
@@ -37,7 +38,9 @@ class Dianqi  extends Component{
         <ImageBackground 
         source={require('../imgges/bg1.jpg')}
         style={{flexDirection:'row',justifyContent:'space-between',padding:20,alignItems:'center'}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{
+                // this.props.navigation.navigate('Xiaoxi')
+            }}>
             <EvilIcons name='navicon' style={{fontSize:30,color:'white'}}  />
             </TouchableOpacity>
             <Text style={{color:'white'}}>ハウスキーピングサービス</Text>
@@ -56,7 +59,9 @@ class Dianqi  extends Component{
             marginTop:20,
         height:dian.h*.25
         }}>
-         <TouchableOpacity>
+         <TouchableOpacity onPress={()=>{
+             this.props.navigation.navigate('SwiperPage')
+         }}>
         <ImageBackground source={require('../imgges/bg1.jpg')} style={{
             width:dian.w,height:dian.h*.25,justifyContent:'center',
             padding:20,
@@ -68,7 +73,9 @@ class Dianqi  extends Component{
         <Text style={{color:'white',fontSize:18}}>いいヘルパーに仕えましょう</Text>
         </ImageBackground>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+            this.props.navigation.navigate('SwiperPage')
+        }}>
         <ImageBackground source={require('../imgges/bg1.jpg')} style={{
            width:dian.w,height:dian.h*.25,justifyContent:'center',
            padding:20,
@@ -93,7 +100,9 @@ class Dianqi  extends Component{
             <View style={{width:'47%',
             justifyContent:'space-between',
             height:dian.h*.4}}>
-             <TouchableOpacity>
+             <TouchableOpacity onPress={()=>{
+                 this.props.navigation.navigate('Fen_lei')
+             }}>
              <ImageBackground source={require('../imgges/bg1.jpg')} 
               style={{width:'100%',height:dian.h*.18,alignItems:'center',justifyContent:'center'}}
               >
@@ -103,7 +112,9 @@ class Dianqi  extends Component{
              <Text style={{color:'white',marginTop:10,fontSize:16}}>分類された順序</Text>
             </ImageBackground> 
              </TouchableOpacity>
-             <TouchableOpacity>
+             <TouchableOpacity onPress={()=>{
+                 this.props.navigation.navigate('Jia_dian')
+             }}>
              <ImageBackground source={require('../imgges/bg1.jpg')} 
               style={{width:'100%',height:dian.h*.18,alignItems:'center',justifyContent:'center'}}
               >

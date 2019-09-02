@@ -11,7 +11,9 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import ALlPAGE from './dianqi/config/page'
 
 
+
 type Props = {};
+console.disableYellowBox=true
 export default class App extends Component<Props> {
   render() {
     return (

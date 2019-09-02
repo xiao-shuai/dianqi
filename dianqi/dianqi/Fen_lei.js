@@ -19,6 +19,10 @@ import {dian} from '../config/config'
 class Fen_lei  extends Component{
     static navigationOptions = {
         title: '分類された順序',
+        headerStyle: {
+            backgroundColor: '#12FFF7',
+          },
+          headerTintColor:'white'
         // header:null
       }
     constructor(props){
@@ -29,9 +33,49 @@ class Fen_lei  extends Component{
     }
 
     render(){
+        const data=[
+            {
+              tit:'冷蔵庫の修理',  
+            },
+            {
+                tit:'水道の修理',  
+            },
+            {
+                tit:'电路维修',  
+            },
+            {
+                tit:'電気回路の修理',  
+            },
+            {
+                tit:'コンピュータの修理',  
+            },
+            {
+                tit:'エアコンの修理',  
+            },
+            {
+                tit:'洗濯機の修理',  
+            },
+            {
+                tit:'その他の修理'
+            }
+
+        ]
         return(
         <SafeAreaView style={{flex:1}}>
-        
+         <ScrollView contentContainerStyle={{alignItems:'center',padding:20}}>
+          {
+              data.map((i,k)=>{
+                  return (
+                  <TouchableOpacity onPress={()=>{
+            this.props.navigation.navigate('Jia_dian',{info:i.tit})
+                  }} key={k} style={{padding:10,backgroundColor:'#99A3A4',width:'95%',marginTop:20}}>
+                  <Text style={{fontSize:18,color:'white'}}>{i.tit}</Text>  
+
+                  </TouchableOpacity>
+                  )
+              })
+          }
+         </ScrollView>
         </SafeAreaView>
         )
     }
