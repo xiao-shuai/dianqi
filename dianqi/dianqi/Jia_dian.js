@@ -72,7 +72,7 @@ class Fen_lei  extends Component{
         const info=this.props.navigation.getParam('info')
         return(
         <SafeAreaView style={{flex:1}}>
-           <ScrollView contentContainerStyle={{alignItems:'center'}}>
+           <KeyboardAwareScrollView contentContainerStyle={{alignItems:'center'}}>
            
            <Input label='修理の種類' containerStyle={{marginTop:20,width:dian.w*.95}} 
             editable={false}
@@ -122,11 +122,11 @@ class Fen_lei  extends Component{
             }}
             />
             <Button title='送信' buttonStyle={{
-                marginTop:20,width:dian.w*.9,backgroundColor:dian.theme
+                marginTop:20,width:dian.w*.9,backgroundColor:dian.theme,marginBottom:10
             }} onPress={()=>{
                this.submit()
             }}/>
-         </ScrollView> 
+         </KeyboardAwareScrollView> 
         
         </SafeAreaView>
         )
