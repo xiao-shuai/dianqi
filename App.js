@@ -9,15 +9,17 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import ALlPAGE from './dianqi/config/page'
-
-
+import alldata from './dianqi/data/data'
+import {Provider} from 'mobx-react'
 
 type Props = {};
 console.disableYellowBox=true
 export default class App extends Component<Props> {
   render() {
     return (
+      <Provider  {...alldata}>
       <ALlPAGE />
+      </Provider>
     );
   }
 }

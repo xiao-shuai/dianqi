@@ -31,7 +31,16 @@ class Dianqi  extends Component{
 
         }
     }
+componentWillMount(){
+    AsyncStorage.getItem('bb').then(res=>{
+          console.log('22',res);
+          if(res==null){
+           this.props.navigation.navigate('Login')       
+          }
+    }).catch(err=>{
 
+    })
+}
     render(){
         return(
         <SafeAreaView style={{flex:1}}>

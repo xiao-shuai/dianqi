@@ -16,6 +16,10 @@ import { NavigationActions } from 'react-navigation';
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import Swiper from 'react-native-swiper';
 import {dian} from '../config/config'
+import {inject,observer} from 'mobx-react'
+
+@inject(["Dian"])
+@observer // 监听当前组件
 class Fen_lei  extends Component{
     static navigationOptions = {
         title: 'アプライアンスの修理',
@@ -38,16 +42,29 @@ class Fen_lei  extends Component{
      if(this.state.phone==undefined){
         return Alert.alert('ヒント','電話番号を入力してください。',[{'text':'分かりました'}])
     }
+    if(this.state.add==undefined){
+        return Alert.alert('ヒント','住所を入力してください',[{'text':'分かりました'}])
+    }
     if(this.state.money==undefined){
         return Alert.alert('ヒント','予算の金額は空です。',[{'text':'分かりました'}])
     }
     if(this.state.xx==undefined){
         return Alert.alert('ヒント','修理の詳細は空です。',[{'text':'分かりました'}])
     }
-        
+    let a= {
+        name:this.state.name,
+        phone:this.state.phone,
+        money:this.state.money,
+        add:this.state.add
+    } 
+    this.props.Dian.add_list(a)
+    this.props.navigation.navigate('My_dd')
+    // Alert.alert('','',[{'text':''}])
 
  }
     render(){
+        console.log('aa:',this.props.Dian.list);
+        
         const info=this.props.navigation.getParam('info')
         return(
         <SafeAreaView style={{flex:1}}>
@@ -58,13 +75,21 @@ class Fen_lei  extends Component{
             defaultValue={info}
            />
            <Input label='名前' containerStyle={{marginTop:20,width:dian.w*.95}} 
+            placeholder='名前を入力してください'
             onChangeText={(name)=>{
             this.setState({name})
             }}
            />
            <Input label='連絡電話' containerStyle={{marginTop:20,width:dian.w*.95}} 
+              placeholder='電話を入力してください'
              onChangeText={(phone)=>{
              this.setState({phone})
+             }}
+            />
+            <Input label='住所' containerStyle={{marginTop:20,width:dian.w*.95}} 
+             placeholder='住所を入力してください'
+             onChangeText={(add)=>{
+             this.setState({add})
              }}
             />
              <Input label='予算賃金' containerStyle={{marginTop:20,width:dian.w*.95}} 
