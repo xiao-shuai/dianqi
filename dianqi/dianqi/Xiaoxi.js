@@ -31,7 +31,12 @@ class Xiaoxi  extends Component{
 
         }
     }
-
+ componentDidMount(){
+     fetch('https://www.fastmock.site/mock/a81b9e8ab453b4f3d0e70963138bc7e7/japenweixiu/news')
+     .then(res=>res.json())
+     .then()
+     .catch()
+ }
     render(){
         return(
         <SafeAreaView style={{flex:1,alignItems:'center'}}>

@@ -38,6 +38,10 @@ class My_err extends  Component{
 
      }else {
         Alert.alert('ヒント','フィードバックが成功しました。できるだけ早く処理します。',[{'text':'分かりました',}]) 
+        fetch('https://www.fastmock.site/mock/a81b9e8ab453b4f3d0e70963138bc7e7/japenweixiu/feedback',{method:'POST'})
+        .then(res=>res.json())
+        .then()
+        .catch()
      }
  }
  render (){

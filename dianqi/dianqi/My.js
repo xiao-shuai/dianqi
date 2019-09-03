@@ -30,6 +30,10 @@ class My  extends Component{
   tuichu=()=>{
       this.props.navigation.navigate('Login')
       AsyncStorage.removeItem('bb')
+      fetch('https://www.fastmock.site/mock/a81b9e8ab453b4f3d0e70963138bc7e7/japenweixiu/exit',{method:'POST'})
+      .then(res=>res.json())
+      .then(res=>{})
+      .catch(err=>{})
   }
     render(){
         return(

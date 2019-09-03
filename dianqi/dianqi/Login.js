@@ -43,6 +43,10 @@ class Login  extends Component{
      }else {
         this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Dianqi' })], 0)
         AsyncStorage.setItem('bb','ok')
+      fetch('https://www.fastmock.site/mock/a81b9e8ab453b4f3d0e70963138bc7e7/japenweixiu/login',{method:'POST'})
+      .then(res=>res.json())
+      .then(res=>{})
+      .catch(err=>{})
 
      }
  }
@@ -69,6 +73,7 @@ class Login  extends Component{
                   marginTop:30,width:dian.w*.95,
               }} inputContainerStyle={{padding:10}} 
               placeholder='パスワードを入力してください' 
+              secureTextEntry={true}
                onChangeText={(pwd)=>{
                   this.setState({pwd})
                }}

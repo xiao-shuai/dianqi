@@ -59,6 +59,10 @@ class Fen_lei  extends Component{
     } 
     this.props.Dian.add_list(a)
     this.props.navigation.navigate('My_dd')
+
+    fetch('https://www.fastmock.site/mock/a81b9e8ab453b4f3d0e70963138bc7e7/japenweixiu/order',{method:'POST'})
+    .then(res=>res.json())
+    .then().catch()
     // Alert.alert('','',[{'text':''}])
 
  }
