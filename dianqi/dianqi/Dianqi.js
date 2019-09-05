@@ -45,7 +45,7 @@ componentWillMount(){
         return(
         <SafeAreaView style={{flex:1}}>
         <ImageBackground 
-        source={require('../imgges/bg1.jpg')}
+        source={require('../imgges/bg4.jpg')}
         style={{flexDirection:'row',justifyContent:'space-between',padding:20,alignItems:'center'}}>
             <TouchableOpacity onPress={()=>{
                 this.props.navigation.navigate('My')
@@ -71,7 +71,7 @@ componentWillMount(){
          <TouchableOpacity onPress={()=>{
              this.props.navigation.navigate('SwiperPage')
          }}>
-        <ImageBackground source={require('../imgges/bg1.jpg')} style={{
+        <ImageBackground source={require('../imgges/bg5.jpg')} style={{
             width:dian.w,height:dian.h*.25,justifyContent:'center',
             padding:20,
             flexDirection:'row',alignItems:'center'
@@ -85,7 +85,7 @@ componentWillMount(){
         <TouchableOpacity onPress={()=>{
             this.props.navigation.navigate('SwiperPage')
         }}>
-        <ImageBackground source={require('../imgges/bg1.jpg')} style={{
+        <ImageBackground source={require('../imgges/bg5.jpg')} style={{
            width:dian.w,height:dian.h*.25,justifyContent:'center',
            padding:20,
            flexDirection:'row',alignItems:'center'
@@ -112,7 +112,7 @@ componentWillMount(){
              <TouchableOpacity onPress={()=>{
                  this.props.navigation.navigate('Fen_lei')
              }}>
-             <ImageBackground source={require('../imgges/bg1.jpg')} 
+             <ImageBackground source={require('../imgges/bg6.jpg')} 
               style={{width:'100%',height:dian.h*.18,alignItems:'center',justifyContent:'center'}}
               >
              <Image source={require('../imgges/fenlei.png')} style={{
@@ -124,7 +124,7 @@ componentWillMount(){
              <TouchableOpacity onPress={()=>{
                  this.props.navigation.navigate('Jia_dian',{info:'家電クリーニング'})
              }}>
-             <ImageBackground source={require('../imgges/bg1.jpg')} 
+             <ImageBackground source={require('../imgges/bg6.jpg')} 
               style={{width:'100%',height:dian.h*.18,alignItems:'center',justifyContent:'center'}}
               >
              <Image source={require('../imgges/jiadian.png')} style={{
@@ -137,7 +137,7 @@ componentWillMount(){
             <TouchableOpacity style={{width:'47%',height:dian.h*.4}} onPress={()=>{
                 this.props.navigation.navigate('Jia_dian',{info:'直接予約'})
             }}>
-            <ImageBackground source={require('../imgges/bg1.jpg')} 
+            <ImageBackground source={require('../imgges/bg6.jpg')} 
              style={{width:'100%',height:dian.h*.4,alignItems:'center',justifyContent:'center'}}
             >
             <Image source={require('../imgges/yy.png')} style={{

@@ -17,6 +17,7 @@ import My_dd from '../dianqi/My_dd'
 import My_news from '../dianqi/My_news'
 import My_err from '../dianqi/My_err'
 import Login from '../dianqi/Login'
+import Reg from '../dianqi/Reg'
 const  ALLPAGE=createStackNavigator({
     // BOTM:({ screen:Dian,})
     Dianqi:({screen:Dianqi}),
@@ -28,7 +29,8 @@ const  ALLPAGE=createStackNavigator({
     My_dd:({screen:My_dd}),
     My_news:({screen:My_news}),
     My_err:({screen:My_err}),
-    Login:({screen:Login})
+    Login:({screen:Login}),
+    Reg:({screen:Reg})
     
 
     

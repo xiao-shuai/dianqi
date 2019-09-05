@@ -19,16 +19,14 @@ import {dian} from '../config/config'
 import {inject,observer} from 'mobx-react'
 @inject(["Dian"])
 @observer // 监听当前组件
-class Login  extends Component{
+class Reg  extends Component{
     static navigationOptions = {
-        header:null,
-        headerBackTitle:null
-
-        // title: 'ログイン',
-        // headerStyle: {
-        //     backgroundColor: '#12FFF7',
-        //   },
-        //   headerTintColor:'white'
+        // header:null
+        title: 'アカウントを登録する',
+        headerStyle: {
+            backgroundColor: '#12FFF7',
+          },
+          headerTintColor:'white'
         // header:null
       }
     constructor(props){
@@ -42,7 +40,10 @@ class Login  extends Component{
       Alert.alert('ヒント','アカウントを入力してください',[{'text':'分かりました',}])
      }else if(this.state.pwd==undefined){
         Alert.alert('ヒント','パスワードを入力してください',[{'text':'分かりました',}])
-     }else {
+     }else if(this.state.pwd!==this.state.pwd2){
+      Alert.alert('ヒント','二回のパスワードが一致しません',[{'text':'分かりました'}])
+     }
+     else {
         this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Dianqi' })], 0)
         AsyncStorage.setItem('bb','ok')
       fetch('https://www.fastmock.site/mock/a81b9e8ab453b4f3d0e70963138bc7e7/japenweixiu/login',{method:'POST'})
@@ -80,28 +81,32 @@ class Login  extends Component{
                   this.setState({pwd})
                }}
               />
-              
+                <Input label='パスワード' containerStyle={{
+                  marginTop:30,width:dian.w*.95,
+              }} inputContainerStyle={{padding:10}} 
+              placeholder='パスワードを入力してください' 
+              secureTextEntry={true}
+               onChangeText={(pwd2)=>{
+                  this.setState({pwd2})
+               }}
+              />
              
-             <Button title='ログイン' buttonStyle={{marginTop:20,backgroundColor:dian.theme,width:dian.w*.9}} 
+             <Button title='登録する' buttonStyle={{marginTop:20,backgroundColor:dian.theme,width:dian.w*.9}} 
                onPress={()=>{
                 this.add_user()
                }}
              />
              <TouchableOpacity style={{marginTop:20}} onPress={()=>{
-              this.props.navigation.navigate('Reg')
+                this.props.navigation.goBack()
              }}>
-                 <Text style={{color:dian.theme}}>アカウントを登録する</Text>
+                 <Text style={{color:dian.theme}}>ログインします</Text>
              </TouchableOpacity>
-             <TouchableOpacity style={{marginTop:20}} onPress={()=>{
-                 Alert.alert('ヒント','パスワードを忘れたら、010-4553789に連絡してパスワードを探してください。',[{'text':'分かりました'}])
-             }}>
-                 <Text style={{color:'#A6ACAF'}}>パスワードを忘れますか？</Text>
-             </TouchableOpacity>
-
+             
+      
              </KeyboardAwareScrollView>
             </SafeAreaView>
         )
     }
 }
 
-export default Login
+export default Reg
